@@ -43,7 +43,7 @@ export const Map = ({ latitude, longitude }: MapProps) => {
   };
 
   return (
-    <div className="flex justify-center flex-1">
+    <div className="flex justify-center flex-1 h-80 m-6">
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={18}
