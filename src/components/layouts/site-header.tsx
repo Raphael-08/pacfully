@@ -33,7 +33,7 @@ export const SiteHeader = () => {
             </Link>
             <div className="flex items-center gap-4">
               {Pages.map((page) => {
-                const isActive = pathname.includes(page.path ?? "");
+                const isActive = pathname === page.path;
                 return (
                   page.path && (
                     <Link
