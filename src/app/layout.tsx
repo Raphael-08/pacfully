@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Provider } from "@/components/provider";
 import { SiteHeader } from "@/components/layouts/site-header";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site-config";
 
 export const metadata: Metadata = {
   title: "Pacfully",
-  description:
-    "Packaging & Printing Solutions That Elevate Your Brand",
+  description: "Packaging & Printing Solutions That Elevate Your Brand",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
@@ -32,6 +30,7 @@ export default function RootLayout({
           "flex min-h-screen flex-col scroll-smooth supports-[min-h-[100dvh]]:min-h-[100dvh] bg-background"
         )}
       >
+        <SiteHeader></SiteHeader>
         {children}
       </body>
     </html>
