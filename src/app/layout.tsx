@@ -3,6 +3,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layouts/site-header";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site-config";
+import { Provider } from "@/components/provider";
 
 export const metadata: Metadata = {
   title: "Pacfully",
@@ -30,8 +31,10 @@ export default function RootLayout({
           "flex min-h-screen flex-col scroll-smooth supports-[min-h-[100dvh]]:min-h-[100dvh] bg-background"
         )}
       >
-        <SiteHeader></SiteHeader>
-        {children}
+        <Provider>
+          <SiteHeader></SiteHeader>
+          {children}
+        </Provider>
       </body>
     </html>
   );
