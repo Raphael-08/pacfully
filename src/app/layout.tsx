@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import { Provider } from "@/components/provider";
+import { SiteHeader } from "@/components/layouts/site-header";
+import { cn } from "@/lib/utils";
+import { siteConfig } from "@/config/site-config";
 
 export const metadata: Metadata = {
   title: "Create Next App",
