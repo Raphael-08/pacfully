@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { PrinterIcon, FileTextIcon, BookOpenIcon, GlobeIcon, PackageIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from "next/image"
 
 
 
@@ -14,10 +15,9 @@ const services = [
       price: 175.00,
       icon: PackageIcon,
       image: [
-        "https://image.fluxpro.ai/custom/209fa902-8d5a-44f2-8611-26e4b2a9a2ca.jpg",
-        "https://image.fluxpro.ai/custom/3089d90b-6243-48d5-8a79-5a21b37f5c3f.jpg",
-        "https://image.fluxpro.ai/custom/a6a607ba-af94-4ed0-8430-bd77a3a3cd75.jpg",
-
+        "packing1",
+        "packing2",
+        "packing3",
       ]
     },
     {
@@ -26,9 +26,9 @@ const services = [
     price: 50.00,
     icon: PrinterIcon,
     image: [
-        "https://image.fluxpro.ai/custom/17255f89-ca6d-4002-9869-c0e1fc501044.jpg",
-        "https://image.fluxpro.ai/custom/666232f4-9ae1-4171-8071-29446a60d2ed.jpg",
-        "https://image.fluxpro.ai/custom/546890e2-5b5f-43f6-97bf-586fc18311e2.jpg",
+        "business1",
+        "business2",
+        "business3",
     ]
   },
   {
@@ -37,9 +37,8 @@ const services = [
     price: 100.00,
     icon: FileTextIcon,
     image: [
-        "https://image.fluxpro.ai/custom/9c4fc44d-8699-4323-a888-e5d5825acafe.jpg",
-        "https://image.fluxpro.ai/custom/40867a53-de1b-4702-95da-7daf55268c12.jpg",
-        
+        "flyer1",
+        "flyer2",        
     ]
   },
   {
@@ -48,8 +47,8 @@ const services = [
     price: 200.00,
     icon: GlobeIcon,
     image: [
-        "https://image.fluxpro.ai/custom/2a4246bc-7512-4263-9aa2-5a6d826746b7.jpg",
-        "https://image.fluxpro.ai/custom/b77d506a-0c1b-4607-a990-90c8f70a5dbb.jpg",
+        "global1",
+        "global2",
     ]
   },
   {
@@ -58,9 +57,9 @@ const services = [
     price: 150.00,
     icon: BookOpenIcon,
     image: [
-        "https://image.fluxpro.ai/custom/cc43dc9b-8741-4f26-8fec-08f48e0ccfb6.jpg",
-        "https://image.fluxpro.ai/custom/66a19917-163e-4d8e-a0a3-4668972c3aaf.jpg",
-        "https://image.fluxpro.ai/custom/66a19917-163e-4d8e-a0a3-4668972c3aaf.jpg"
+        "brochure1",
+        "brochure2",
+        "brochure3",
     ]
   }
 ]
@@ -99,21 +98,17 @@ export default function Component() {
         {services.map((service, index) => (
           <Card key={index} className="flex flex-col">
             <div className="relative h-48">
-              <img 
-                src={service.image[currentImages[index]]} 
-                alt={service.name} 
-                className="w-full h-full object-cover transition-opacity duration-500"
-              />
+              <Image src={"/services/"+service.image[currentImages[index]]+".png"} width={500} height={500} alt={service.name} className="w-full h-full object-cover transition-opacity duration-500" />
               <button 
                 onClick={() => changeImage(index, 'prev')}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 text-black p-2 rounded-full"
                 aria-label="Previous image"
               >
                 <ChevronLeft size={24} />
               </button>
               <button 
                 onClick={() => changeImage(index, 'next')}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-black p-2 rounded-full"
                 aria-label="Next image"
               >
                 <ChevronRight size={24} />
