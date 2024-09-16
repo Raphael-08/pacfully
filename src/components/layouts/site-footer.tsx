@@ -7,7 +7,7 @@ export const SiteFooter = () => {
   return (
     <footer className="bg-background py-12 px-4 border-t">
       <div className="container mx-auto max-w-screen-2xl px-0">
-        <div className="flex flex-col md:flex-row px-2 gap-8 items-center justify-between">
+        <div className="flex flex-col md:flex-row px-2 gap-8 items-start justify-between">
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
               <Image src={"/logo.svg"} width={30} height={30} alt="PF"></Image>
