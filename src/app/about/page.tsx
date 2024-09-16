@@ -1,19 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Printer, Package, Cpu, Globe } from "lucide-react"
+import { Globe as G } from "@/components/globe"
 
 export default function Component() {
   return (
     <div className="container mx-auto p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-5">
         <div className="space-y-6">
-          <h2 className="text-3xl font-bold">ABOUT US</h2>
-          <p className="text-muted-foreground">
+          <h2 className="text-3xl font-bold flex justify-center">ABOUT US</h2>
+          <p className="text-muted-foreground text-center">
             Pacfully is a fully forward-integrated and comprehensive solutions provider
             company. Based in Chennai, we serve PAN India. We Engineer, Build and
             maintain commercial and utility-scale projects that deliver a powerful return on
             investment for our clients.
           </p>
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col gap-5">
             {[
               {
                 title: "ROBUST PRINTING",
@@ -49,17 +50,7 @@ export default function Component() {
           </div>
         </div>
         <div className="hidden md:block">
-          <img
-            alt="Digital interface"
-            className="rounded-lg object-cover w-full h-full"
-            height="600"
-            src="/placeholder.svg?height=600&width=600"
-            style={{
-              aspectRatio: "600/600",
-              objectFit: "cover",
-            }}
-            width="600"
-          />
+          <G />
         </div>
       </div>
     </div>
