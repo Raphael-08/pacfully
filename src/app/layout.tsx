@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <Provider>
           <SiteHeader></SiteHeader>
-          {children}
+          <main className="flex-1">{children}</main>
           <SiteFooter></SiteFooter>
         </Provider>
       </body>
