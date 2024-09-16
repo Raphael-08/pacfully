@@ -5,8 +5,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 // import { useGeolocation } from "@/hooks/use-geolocation";
 
 const mapContainerStyle = {
-  width: "30rem",
-  height: "50rem",
+  width: "25rem",
+  height: "30rem",
 };
 
 type MapProps = {
