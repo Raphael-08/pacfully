@@ -25,35 +25,35 @@ const services = [
     description: "Custom packaging solutions for your products",
     price: 175.0,
     icon: PackageIcon,
-    image: ["packing1", "packing2", "packing3"],
+    image: ["packing1.png", "packing2.png", "packing3.png"],
   },
   {
     name: "Business Card Printing",
     description: "High-quality business card printing services",
     price: 50.0,
     icon: PrinterIcon,
-    image: ["business1", "business2", "business3"],
+    image: ["business1.png", "business2.png", "business3.png"],
   },
   {
     name: "Flyer Printing",
     description: "Professional flyer printing services",
     price: 100.0,
     icon: FileTextIcon,
-    image: ["flyer1", "flyer2"],
+    image: ["flyer1.png", "flyer2.png"],
   },
   {
     name: "Global Services",
     description: "Various global printing services",
     price: 200.0,
     icon: GlobeIcon,
-    image: ["global1", "global2"],
+    image: ["global1.png", "global2.png"],
   },
   {
     name: "Brochure Printing",
     description: "Custom brochure printing services",
     price: 150.0,
     icon: BookOpenIcon,
-    image: ["brochure1", "brochure2", "brochure3"],
+    image: ["brochure1.png", "brochure2.png", "brochure3.png"],
   },
 ];
 
@@ -102,12 +102,12 @@ export default function Component() {
             <div className="relative h-48">
               <Image
                 src={
-                  "/services/" + service.image[currentImages[index]] + ".png"
+                  "/services/" + service.image[currentImages[index]]
                 }
                 width={500}
                 height={500}
                 alt={service.name}
-                className="w-full h-full object-cover transition-opacity duration-500"
+                className="w-full h-full rounded-t-lg object-cover transition-opacity duration-500"
               />
               <button
                 onClick={() => changeImage(index, "prev")}
