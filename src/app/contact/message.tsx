@@ -21,8 +21,26 @@ export default function MessageForm() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwRDi4_KKPvllYZJMCWCzoPe_Vep7orqAlSO9x79rIJyEHLef2jQWQQdT3ntDIe0v5S/exec',{
+        method:'Post',
+        mode:'cors',
+        headers:{'Content-Type':'text/plain',
+          'Access-Control-Request-Method':'POST'
+        },
+        body: JSON.stringify(formData)
+      });
+      if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log(data);
+    }
+    catch (error) {
+      console.log(error);
+    }
     // Handle form submission here
     console.log('Form submitted:', formData)
   }
