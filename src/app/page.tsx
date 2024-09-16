@@ -3,8 +3,7 @@ import Balancer from "react-wrap-balancer";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex max-w-2xl flex-1 flex-col">
-
+    <main className="mx-auto flex max-w-2xl flex-1 flex-col items-center justify-center min-h-screen h-full">
       <section className="flex flex-1 flex-col items-center justify-center gap-4">
         <h1
           className="animate-fade-up text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
@@ -14,7 +13,8 @@ export default function Home() {
           }}
         >
           <Balancer>
-            <span className="text-muted-foreground">Pac</span> <span className="text-primary">fully</span>
+            <span className="text-secondary">Pac</span>
+            <span className="text-primary">fully</span>
           </Balancer>
         </h1>
         <div

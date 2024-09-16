@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/contact",
   ].map((route) => ({
     url: absoluteUrl(route),
-    lastModified: new Date().toISOString(),
+    lastModified: new Date(),
   }));
   return [...routes];
 }

@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import { SiteHeader } from "@/components/layouts/site-header";
 import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
+import { SiteFooter } from "@/components/layouts/site-footer";
+import { SiteHeader } from "@/components/layouts/site-header";
 import { siteConfig } from "@/config/site-config";
 import { Provider } from "@/components/provider";
 
@@ -33,7 +34,8 @@ export default function RootLayout({
       >
         <Provider>
           <SiteHeader></SiteHeader>
-          {children}
+          <main className="flex-1">{children}</main>
+          <SiteFooter></SiteFooter>
         </Provider>
       </body>
     </html>

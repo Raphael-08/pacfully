@@ -12,6 +12,7 @@ const Contact: React.FC = () => {
                 <p className='text-3xl font-mono'>Contact Us</p>
             </div>
             <div className='m-3'>
+                <p className='text-sm'>We&#39;d love to hear from you!</p>
                 <p className='text-sm'>Please feel free to reach out to us with any questions, comments, or concerns.</p>
             </div>
             <div className='flex justify-center m-3'>

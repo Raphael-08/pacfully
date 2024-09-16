@@ -26,7 +26,7 @@ export const SiteHeader = () => {
               <Image src={"/logo.svg"} width={40} height={40} alt="PF"></Image>
               <Balancer
                 as={"span"}
-                className="truncate text-ellipsis font-bold"
+                className="truncate text-ellipsis font-bold text-secondary"
               >
                 {siteConfig.name}
               </Balancer>
@@ -65,7 +65,7 @@ export const SiteHeader = () => {
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="md:hidden">
+    <div className="md:hidden flex items-center">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger>
           <Menu className="size-4" />
