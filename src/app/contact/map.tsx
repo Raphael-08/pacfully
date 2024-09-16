@@ -35,9 +35,9 @@ export const Map = ({ latitude, longitude }: MapProps) => {
   const options = {
     disableDefaultUI: true,
     zoomControl: false,
-    mapTypeId: google.maps.MapTypeId.SATELLITE,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
     scaleControl: false,
-    fullscreenControl: true,
+    fullscreenControl: false,
     streetViewControl: false,
     rotateControl: false,
   };
