@@ -14,7 +14,7 @@ export default function Home() {
           }}
         >
           <Balancer>
-            <span className="text-muted-foreground">Pac</span> <span className="text-primary">fully</span>
+            <span className="text-secondary">Pac</span><span className="text-primary">fully</span>
           </Balancer>
         </h1>
         <div
