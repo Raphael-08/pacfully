@@ -10,6 +10,10 @@ export const Pages: DocsConfig[] = [
     path: "/",
   },
   {
+    title: "Services",
+    path: "/services",
+  },
+  {
     title: "About US",
     path: "/about",
   },
@@ -26,6 +30,10 @@ export const docsConfig: DocsConfig[] = [
       {
         title: "Home",
         path: "/",
+      },
+      {
+        title: "Services",
+        path: "/services",
       },
       {
         title: "About US",

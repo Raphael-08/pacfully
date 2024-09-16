@@ -16,7 +16,7 @@ import { Pages } from "@/config/docs-config";
 export const SiteHeader = () => {
   const pathname = usePathname();
   return (
-    <header className="fixed left-0 top-0 z-10 w-full">
+    <header className="sticky left-0 top-0 z-10 w-full">
       {pathname === "/" && <></>}
       <div className="flex h-12 items-center justify-between border-b border-border bg-background px-4 py-2">
         <nav className="mx-auto flex w-full max-w-screen-2xl items-center justify-between">
@@ -26,7 +26,7 @@ export const SiteHeader = () => {
               <Image src={"/logo.svg"} width={40} height={40} alt="PF"></Image>
               <Balancer
                 as={"span"}
-                className="truncate text-ellipsis font-bold"
+                className="truncate text-ellipsis font-bold text-secondary"
               >
                 {siteConfig.name}
               </Balancer>
@@ -65,7 +65,7 @@ export const SiteHeader = () => {
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="md:hidden">
+    <div className="md:hidden flex items-center">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger>
           <Menu className="size-4" />
