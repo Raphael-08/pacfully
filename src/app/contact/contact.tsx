@@ -3,10 +3,11 @@ import React from 'react';
 import { ImLocation } from "react-icons/im";
 import { IoMdCall } from "react-icons/io";
 import { SiGmail } from "react-icons/si";
+import { Mail, Phone } from './mail';
 
 const Contact: React.FC = () => {
     return (
-        <div className='h-80 flex-1 m-6'>
+        <div className="w-full max-w-md mx-auto border border-gray-500 p-6 rounded-lg shadow-md hover:shadow-2xl hover:border-gray-50">
             <div className='flex justify-center m-3'>
                 <p className='text-3xl font-mono'>Contact Us</p>
             </div>
@@ -20,20 +21,20 @@ const Contact: React.FC = () => {
                 <div className='w-10 flex justify-center items-center'>
                     <ImLocation />
                 </div>
-                <p className='text-xl font-mono flex-1'>123 Main Street, City, State, ZIP</p>
+                <p className='text-lg flex-1'>123 Main Street, City, State, ZIP</p>
             </div>
             <div className='flex justify-center m-3'>
                 <div className='w-10 flex justify-center items-center'>
                     <IoMdCall />
                 </div>
-                <p className='text-xl flex-1 font-mono'>(123) 456-7890</p>
+                <a href='tel:+1234567890' className='text-lg flex-1'> <Phone /> </a>
             </div>
             <div className='flex justify-center m-3'>
                 <div className='w-10 flex justify-center items-center'>
                     <SiGmail />
                 </div>
-                <p className='text-xl flex-1 font-mono'>
-                    <a href='mailto:info@example.com'>info@example.com</a>
+                <p className='text-lg flex-1'>
+                    <a href='mailto:info@example.com'><Mail /></a>
                 </p>
             </div>
         </div>
