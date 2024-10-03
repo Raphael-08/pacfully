@@ -46,7 +46,7 @@ export default function MessageForm() {
   }
 
   return (
-    <div className="w-full max-w-md mx-auto p-6 rounded-lg shadow-md">
+    <div className="w-full max-w-md mx-auto border border-gray-500 p-6 rounded-lg shadow-md hover:shadow-2xl hover:border-gray-50">
       <h2 className="text-2xl font-bold text-center mb-6">
         Email us with any questions or inquiries or use our contact data.
       </h2>

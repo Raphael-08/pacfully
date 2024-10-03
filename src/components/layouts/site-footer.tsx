@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { Facebook, Github, Instagram, Twitter } from "lucide-react";
@@ -7,8 +6,8 @@ import { siteConfig } from "@/config/site-config";
 export const SiteFooter = () => {
   return (
     <footer className="bg-background py-12 px-4 border-t">
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className="container mx-auto max-w-screen-2xl px-0">
+        <div className="flex flex-col md:flex-row px-2 gap-8 items-start justify-between">
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
               <Image src={"/logo.svg"} width={30} height={30} alt="PF"></Image>
@@ -44,25 +43,34 @@ export const SiteFooter = () => {
               </Link>
             </div>
           </div>
-          <div className="space-y-4 md:text-right">
-            <Link href="/services" className="block text-muted-foreground hover:text-muted">
+          <div className="space-y-4 md:text-right flex flex-col items-start">
+            <Link
+              href="/services"
+              className="block text-foreground hover:text-muted-foreground"
+            >
               Services
             </Link>
-            <Link href="/about" className="block text-gray-600 hover:text-gray-900">
+            <Link
+              href="/about"
+              className="block text-foreground hover:text-muted-foreground"
+            >
               About US
             </Link>
-            <Link href="/contact" className="block text-gray-600 hover:text-gray-900">
+            <Link
+              href="/contact"
+              className="block text-foreground hover:text-muted-foreground"
+            >
               Contact US
             </Link>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-500">
+        <div className="mt-8 pt-4 border-t flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm text-muted-foreground">
             © 2024 {siteConfig.name} Inc. All rights reserved.
           </p>
           <Link
             href="#"
-            className="text-sm text-gray-500 hover:text-gray-700 mt-4 md:mt-0"
+            className="text-sm text-muted-foreground hover:text-muted-foreground/60 mt-4 md:mt-0"
           >
             Terms of Service
           </Link>

@@ -1,10 +1,7 @@
 import "./globals.css";
-import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { SiteFooter } from "@/components/layouts/site-footer";
-import { SiteHeader } from "@/components/layouts/site-header";
 import { siteConfig } from "@/config/site-config";
-import { Provider } from "@/components/provider";
+import RootLayoutClient from "@/components/layouts/RootLayoutClient";
 
 export const metadata: Metadata = {
   title: "Pacfully",
@@ -20,24 +17,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={cn(
-          "flex min-h-screen flex-col scroll-smooth supports-[min-h-[100dvh]]:min-h-[100dvh] bg-background"
-        )}
-      >
-        <Provider>
-          <SiteHeader></SiteHeader>
-          {children}
-          <SiteFooter></SiteFooter>
-        </Provider>
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <RootLayoutClient>{children}</RootLayoutClient>;
 }
