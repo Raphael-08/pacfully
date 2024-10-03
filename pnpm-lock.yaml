@@ -41,6 +41,9 @@ importers:
       '@react-three/fiber':
         specifier: ^8.17.7
         version: 8.17.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.168.0)
+      '@rive-app/react-canvas':
+        specifier: ^4.14.1
+        version: 4.14.4(react@18.3.1)
       '@t3-oss/env-nextjs':
         specifier: ^0.11.1
         version: 0.11.1(typescript@5.6.2)(zod@3.23.8)
@@ -636,6 +639,14 @@ packages:
         optional: true
       react-native:
         optional: true
+
+  '@rive-app/canvas@2.21.5':
+    resolution: {integrity: sha512-pjKxJ75LOb7LT8/PJRRVAwjnd3YJF5am5aI/0BcifMtat3K7w6PdYUOYrtCsWOEExJnqqqH3n5USF2YKuFRNAg==}
+
+  '@rive-app/react-canvas@4.14.4':
+    resolution: {integrity: sha512-lGi4k/qlTA6u8Fa0TPdZxE1a2UbKFMbnuS4MlwUxVeZezdSueqTi36o3fs8QRbG5aIR4A00y2MPxFN5kr5vXgA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -3026,6 +3037,13 @@ snapshots:
       zustand: 3.7.2(react@18.3.1)
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
+
+  '@rive-app/canvas@2.21.5': {}
+
+  '@rive-app/react-canvas@4.14.4(react@18.3.1)':
+    dependencies:
+      '@rive-app/canvas': 2.21.5
+      react: 18.3.1
 
   '@rtsao/scc@1.1.0': {}
 
