@@ -9,12 +9,13 @@ export const SiteFooter = () => {
       <div className="container mx-auto max-w-screen-2xl px-0">
         <div className="flex flex-col md:flex-row px-2 gap-8 items-start justify-between">
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center">
+              <span className="text-2xl font-bold">Pa</span>
               <Image src={"/logo.svg"} width={30} height={30} alt="PF"></Image>
-              <span className="text-2xl font-bold">{siteConfig.name}</span>
+              <span className="text-2xl font-bold">fully</span>
             </div>
             <div className="flex space-x-4">
-              <span>We growing up your business with our services</span>
+              <span>India&apos;s First Hybrid Cloud Printing Ecosystem</span>
             </div>
             <div className="flex space-x-4">
               <Link

@@ -1,25 +1,30 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Preloader from "@/components/preloader/preloader";
 import { SiteFooter } from "@/components/layouts/site-footer";
 import { SiteHeader } from "@/components/layouts/site-header";
 import { Provider } from "@/components/provider";
-import { useState, useEffect } from "react";
+import Loader from "@/components/Loader";
+import { useLayoutEffect, useState } from "react";
+import { gsap } from "gsap";
 
 export default function RootLayoutClient({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [isLoading, setIsLoading] = useState(true);
+  const [loaderFinished, setLoaderFinished] = useState(false);
+  const [timeline, setTimeline] = useState(null);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 5400);
+  useLayoutEffect(() => {
+    const context = gsap.context(() => {
+      const tl = gsap.timeline({
+        onComplete: () => setLoaderFinished(true),
+      });
+      setTimeline(tl);
+    });
 
-    return () => clearTimeout(timer); // Clean up the timer on component unmount
+    return () => context.revert();
   }, []);
 
   return (
@@ -29,8 +34,8 @@ export default function RootLayoutClient({
           "flex min-h-screen flex-col scroll-smooth supports-[min-h-[100dvh]]:min-h-[100dvh] bg-background"
         )}
       >
-        {isLoading ? (
-          <Preloader />
+        {!loaderFinished ? (
+          <Loader timeline={timeline} />
         ) : (
           <Provider>
             <SiteHeader />
