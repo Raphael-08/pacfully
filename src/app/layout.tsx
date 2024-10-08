@@ -1,7 +1,11 @@
 import "./globals.css";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
+import { SiteFooter } from "@/components/layouts/site-footer";
+import { SiteHeader } from "@/components/layouts/site-header";
 import { siteConfig } from "@/config/site-config";
-import RootLayoutClient from "@/components/layouts/RootLayoutClient";
+import { Provider } from "@/components/provider";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Pacfully",
@@ -17,6 +21,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <RootLayoutClient>{children}</RootLayoutClient>;
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className="flex min-h-screen flex-col scroll-smooth supports-[min-h-[100dvh]]:min-h-[100dvh] bg-black">
+        <Header />
+        <main className="flex-1">{children}</main>
+      </body>
+    </html>
+  );
 }
