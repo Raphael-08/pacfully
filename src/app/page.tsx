@@ -1,32 +1,45 @@
-import { siteConfig } from "@/config/site-config";
-import Balancer from "react-wrap-balancer";
+"use client";
+
+import { gsap } from "gsap";
+import { Works } from "@/components/works";
+import { AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import Loader from "@/components/Loader";
+import Landing from "@/components/Landing";
+import Footer from "@/components/Footer";
+import SlidingImages from "@/components/SlidingImages";
 
 export default function Home() {
+  const [loaderFinished, setLoaderFinished] = useState(false);
+  const [timeline, setTimeline] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+
+      const context = gsap.context(() => {
+        const tl = gsap.timeline({
+          onComplete: () => {
+            setLoaderFinished(true);
+            window.scrollTo(0, 0);
+            document.body.style.cursor = "default";
+          },
+        });
+        setTimeline(tl);
+      });
+
+      return () => context.revert();
+    })();
+  }, []);
   return (
-    <main className="mx-auto flex max-w-2xl flex-1 flex-col items-center justify-center min-h-screen h-full">
-      <section className="flex flex-1 flex-col items-center justify-center gap-4">
-        <h1
-          className="animate-fade-up text-center text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
-          style={{
-            animationDelay: "0.25s",
-            animationFillMode: "forwards",
-          }}
-        >
-          <Balancer>
-            <span className="text-secondary">Pac</span>
-            <span className="text-primary">fully</span>
-          </Balancer>
-        </h1>
-        <div
-          className="animate-fade-up text-center text-base text-muted-foreground sm:text-xl"
-          style={{
-            animationDelay: "0.35s",
-            animationFillMode: "forwards",
-          }}
-        >
-          <Balancer>{siteConfig.description}</Balancer>
-        </div>
-      </section>
-    </main>
+    <>
+      <AnimatePresence mode="wait">
+        {!loaderFinished && <Loader timeline={timeline} />}
+      </AnimatePresence>
+      <Landing />
+      <SlidingImages />
+      <Footer />
+    </>
   );
 }
